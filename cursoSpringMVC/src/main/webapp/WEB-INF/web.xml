@@ -1,0 +1,21 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>appServlet</servlet-name> <!-- Indicamos el nombre del servlet, que puede ser el que nosotros queramos -->
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param> <!-- Parametro que indicara toda la configuracion de Spring -->
+  		<param-name>contextConfigLocation</param-name> <!-- fichero de configuracion -->
+  		<param-value>/WEB-INF/spring/servlet-context.xml</param-value> <!-- ruta donde estara ese fichero -->
+  	</init-param>
+  	<load-on-startup>1</load-on-startup><!-- precargara el servlet sin esperar a que alguien lo llame -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>appServlet</servlet-name>
+  	<url-pattern>/</url-pattern> <!--  todas las peticiones pasaran por este servlet  -->
+  </servlet-mapping>
+</web-app>
